@@ -1,0 +1,210 @@
+/* --- MAIN --- */
+
+h2, button{
+  position: relative;
+ 
+  color:black;
+  left:40%;
+}
+button{
+  left:45%;
+}
+
+.table {
+  position: relative;
+  width: 650px;
+  height: 480px;
+  background: #8f0222;
+  background: linear-gradient(#a90329, #8f0222, #6d0019);
+  margin: 0 auto;
+  padding: 18px 18px 30px;
+  display: table;
+  line-height: 0;
+  border-radius: 15px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 4px 1px rgba(255, 250, 255, .5) inset, -1px -1px 4px 1px #002 inset, 3px 3px 80px 15px #000;
+}
+
+.deck {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* --- CARD SETTINGS --- */
+
+.deck>input,
+.deck>u,
+.deck>b {
+  width: 100px;
+  height: 129px;
+  position: relative;
+}
+
+.deck>input {
+  margin: 0 5px 10px;
+  z-index: 999;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.deck>u,
+.deck>b {
+  left: -5px; /* Subtract margin value */
+  margin-left: -86px; /* Subtract width value */
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  border-radius: 8px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* --- FRONT CONTENT --- */
+
+.deck>u {
+  font: bold 11px/1 Arial, Helvetica, sans-serif;
+  color: #148;
+  background: #f8fff9;
+  text-decoration: none;
+}
+
+.deck>u>img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 5px auto 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  background: linear-gradient(#fcfcff, #fff 5%, #fbfbfe 65%, #f3f3f5 100%);
+}
+
+.deck>u>i {
+  display: block;
+  margin: 1px 4px 0;
+  font: 9px/.9 Arial, Helvetica, sans-serif;
+  color: #a00;
+}
+
+/* --- BACK CONTENT --- */
+
+.deck>b {
+  background: #ebe119;
+  background: linear-gradient(#fede1e, #dabb1e);
+  border: 5px solid #f8fff9;
+  box-sizing: border-box;
+}
+
+.deck>b::before,
+.deck>b::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: url('https://blog.codepen.io/wp-content/uploads/2012/06/Button-Fill-White-Small.png') center/36px;
+  border-radius: inherit;
+  opacity: .3;
+}
+
+.deck>b::after {
+  background-position: calc(50% + 18px) calc(50% + 18px);
+}
+
+/* --- ANIMATION AND 3D SETTINGS --- */
+
+.deck {
+  perspective: 1500px;
+}
+
+.deck>u,
+.deck>b {
+  transition: all .8s;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  z-index: 0;
+}
+
+.deck>input:checked + u,
+.deck>input:checked + u + b {
+  z-index: 100;
+}
+
+.deck>input:focus + u,
+.deck>input:focus + u + b {
+  transition-property:  transform, filter, box-shadow; /* Exclude z-index to immediately overlay */
+  outline: 0;
+  z-index: 900;
+}
+
+/* --- FRONT ANIMATION --- */
+
+.deck>u {
+  transform: translateX(160%) rotateY(-180deg);
+  transform-origin: -30% center;
+  box-shadow: 130px 30px 40px -20px rgba(0, 0, 0, 0);
+  filter: brightness(3);
+}
+
+.deck>input:checked + u {
+  transform: translateX(0%) rotateY(0deg);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
+  filter: brightness(1);
+}
+
+/* --- BACK ANIMATION --- */
+
+.deck>b {
+  transform: translateX(0%) rotateY(0deg);
+  transform-origin: 130% center;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
+  filter: brightness(1);
+}
+
+.deck>input:checked + u + b {
+  transform: translateX(-160%) rotateY(180deg);
+  box-shadow: 80px 10px 20px -40px rgba(0, 0, 0, 0);
+  filter: brightness(0);
+}
+
+/* Edge hack - Prevent click during transition, otherwise the animation breaks. */
+
+@supports (-ms-ime-align:auto) {
+  .deck>input {
+    animation: step-end .8s;
+  }
+  .deck>u,
+  .deck>b {
+    cursor: pointer;
+  }
+
+  .deck>input:checked {
+    animation-name: noclick1;
+  }
+
+  .deck>input:not(:checked) {
+    animation-name: noclick2;
+  }
+
+  @keyframes noclick1 {
+    0%   { visibility: hidden; }
+    100% { visibility: visible; }
+  }
+
+  @keyframes noclick2 {
+    0%   { visibility: hidden; }
+    100% { visibility: visible; }
+  }
+}
+
+
+#cronometro{
+    position: relative;
+    bottom:250px;
+    left: 80%;
+}

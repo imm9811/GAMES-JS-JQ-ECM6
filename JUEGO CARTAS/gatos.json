@@ -1,0 +1,26 @@
+[
+    {
+        "nombre":"turco",
+        "archivo":"imagenes/turco.jpg"
+    },
+    {
+        "nombre":"british",
+        "archivo":"imagenes/british.jpg"
+    },
+    {
+        "nombre":"conn",
+        "archivo":"imagenes/conn.jpg"
+    },
+    {
+        "nombre":"siames",
+        "archivo":"imagenes/siames.jpg"
+    },
+    {
+        "nombre":"persa",
+        "archivo":"imagenes/persa.jpg"
+    },
+    {
+        "nombre":"ruso",
+        "archivo":"imagenes/ruso.jpg"
+    }
+]
