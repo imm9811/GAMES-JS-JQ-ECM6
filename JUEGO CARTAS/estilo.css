@@ -201,10 +201,11 @@ button{
     100% { visibility: visible; }
   }
 }
-
-
 #cronometro{
     position: relative;
-    bottom:250px;
-    left: 80%;
+    bottom:400px;
+    left: 75%;
+    font-family: Courier,sans-serif;
+    color: #363431;
+    font-size: 50px;
 }

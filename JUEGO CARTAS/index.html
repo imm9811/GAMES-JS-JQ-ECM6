@@ -44,16 +44,14 @@
             <h3 align="center">Javascript</h3>
             <li class="active">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Ejercicios</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
+                <ul id="homeSubmenu">
                     <li>
-                        <a href="#">Home 1</a>
+                        <a href="../LOGOGRIFO/EJERCICIO LOGOGRIFO.html">Logogrifo</a>
                     </li>
                     <li>
-                        <a href="#">Home 2</a>
+                        <a href="#">Juego Cartas</a>
                     </li>
-                    <li>
-                        <a href="#">Home 3</a>
-                    </li>
+                   
                 </ul>
             </li>
             <li>
@@ -61,8 +59,9 @@
             </li>
         </ul>
         Tendras que encontrar las parejas de cada par de cartas.
-        Se contaran los fallos que tengas
-        Tendras una opcion de reiniciar en el caso de que aciertes toda
+        Se contaran los fallos que tengas, asi como los aciertos;
+        Tendras la opcion de reinicar el momento que quieras por si ves que has tardado mucho
+
 </div>
 </nav>
 </div>
@@ -79,12 +78,20 @@
 
   </div>
 </div>
-    <div id="cronometro">
-        <label id="hour">00 </label>:
-        <label id="minute"> 00 </label>:
-        <label id="second"> 00</label>
-    </div>
+<div id="cronometro">
+        <label id="resultado"></label>
+    <br>
+  
+    <label id="hour">00 </label>:
+    <label id="minute"> 00 </label>:
+    <label id="second"> 00</label>
+<br>
+    Fallos:<label id="fallos"></label>
 
+    <br>
+    Aciertos:
+    <label id="aciertos"></label>
+</div>
 </body>
 
 </html>
